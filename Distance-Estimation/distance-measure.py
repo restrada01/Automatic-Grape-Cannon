@@ -42,25 +42,24 @@ def getDistance(measuredWidth, focalLength):
  #   for file in files:
   #         path = os.path.join(root, file)
    #         print(path)
-refImage = cv2.imread('1.jpg', 0)
-print(refImage)
-
-
+imgPath = os.path.join(os.path.dirname(__file__), 'referenceImages/5.jpg')
+refImage = cv2.imread(imgPath)
 
 # train model to detect pixels for known width, and find focal length
-
-
+refFaceWidth = getFaceWidth(refImage)
+focalLength = getFocalLength(refFaceWidth)
+print(focalLength)
+refImageRS = cv2.resize(refImage, (960, 540))
+cv2.imshow("Ref Image", refImageRS)
 
 
 cap = cv2.VideoCapture(0)
-
 while True:
-    ret, frame = cap.read()
+    #ret, frame = cap.read()
 
-    measuredWidth = getFaceWidth(frame)
-    cv2.imshow('refImage', refImage)
-    if cv2.waitKey(1) == ord('q'):
-        break
+   # measuredWidth = getFaceWidth(fra
+   if cv2.waitKey(1) == ord('q'):
+       break
 
-cap.release() 
+#cap.release() 
 cv2.destroyAllWindows()
