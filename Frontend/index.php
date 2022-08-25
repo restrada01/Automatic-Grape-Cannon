@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$dBUsername = "id18904321_chilybowl01_iot";
-$dBPassword = "eAmUGEZ?%7&@0W&J";
-$dBName = "id18904321_learningiot_may9_22";
+$dBUsername = "**";
+$dBPassword = "**";
+$dBName = "**";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 
